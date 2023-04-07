@@ -1,38 +1,68 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: column;
+}
+
+.input-container {
+  background-color: green;
+  width: 100%;
+  padding: 3rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.input-file {
+  font-size: 2.2rem;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.table-container {
+  width: 80%;
+  background-color: rgb(233, 231, 231);
+  margin: 5rem;
+  border-radius: 1.5rem;
+}
+
+h1 {
+  width: 100%;
+  font-size: 3rem;
+  text-align: center;
+}
+
+table {
+  width: 60%;
+  margin: 5rem auto;
+  border-collapse: collapse;
+  border: 0.1rem solid black;
+  font-size: 2rem;
+  background-color: #fff;
+}
+
+table tr {
+  height: 3rem;
+  text-align: center;
+}
+
+table th {
+  border: 0.2rem solid black;
+}
+
+table td {
+  border: 0.1rem solid black;
+}
+
+.table-operations_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.table-operations_container button {
+  margin: 0 1rem;
+  font-size: 2.5rem;
 }
