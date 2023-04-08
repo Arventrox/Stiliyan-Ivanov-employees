@@ -24,7 +24,11 @@ const groupByProjectId = (input) => {
     const { ProjectID } = arr;
 
     group[ProjectID] = group[ProjectID] ?? [];
-    group[ProjectID].push(arr);
+
+    // Removes duplicates if any before pushing
+    if (!group[ProjectID].some((el) => el.EmpID === arr.EmpID)) {
+      group[ProjectID].push(arr);
+    }
 
     return group;
   }, {});
@@ -95,6 +99,7 @@ const summarizePairsWorkData = (input) => {
       }
     }
   }
+
   const unique = arr.filter(
     (obj, index) =>
       arr.findIndex(
@@ -132,6 +137,7 @@ const App = () => {
     const file = event.target.files[0];
     if (!file) return;
     setTableName("Imported Table");
+    setIsTableSorted(false);
 
     Papa.parse(file, {
       header: true,
@@ -158,11 +164,11 @@ const App = () => {
 
     const pairsArr = getDaysWorked(data);
 
-    //Checks if there are pairs of employees
     if (pairsArr.length === 0) {
       setCombinedDaysWorked(
         "There are no employees who have overlapping days of work on the same project"
       );
+      setTableData([]);
       return;
     }
 
@@ -177,7 +183,7 @@ const App = () => {
     setCombinedDaysWorked(
       `This pair has worked together for  ${longestPairWorkedTogether.DaysWorked} days`
     );
-    setTableData(tableDataResult);
+    setTableData([...tableDataResult]);
   };
 
   const showOriginalHandler = () => {
