@@ -28,9 +28,9 @@
 }
 
 h1 {
-  width: 100%;
   font-size: 3rem;
   text-align: center;
+  padding: 0 3rem;
 }
 
 table {
@@ -53,6 +53,10 @@ table th {
 
 table td {
   border: 0.1rem solid black;
+}
+
+.tableData-result {
+  font-weight: bold;
 }
 
 .table-operations_container {
