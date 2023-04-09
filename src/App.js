@@ -97,7 +97,7 @@ const App = () => {
       </header>
       {tableName && (
         <div className="options_container">
-          <h1>{`${tableName} ${!isTableSorted && fileName}`}</h1>
+          <h1>{`${tableName} ${!isTableSorted ? fileName : ""}`}</h1>
 
           {!isTableSorted ? (
             <Button onClick={sortTableHandler}>Sort Table</Button>
