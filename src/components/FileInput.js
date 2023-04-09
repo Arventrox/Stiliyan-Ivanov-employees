@@ -3,6 +3,7 @@ const FileInput = ({ fileHandler }) => {
     <div className="input-container">
       <input
         type="file"
+        aria-label="file-input"
         name="file"
         accept=".csv"
         onChange={fileHandler}

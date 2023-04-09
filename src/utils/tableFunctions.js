@@ -67,7 +67,6 @@ const getDaysWorked = (input) => {
       }
     }
   }
-
   return pairsArr;
 };
 
