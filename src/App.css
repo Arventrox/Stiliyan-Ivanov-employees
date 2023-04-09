@@ -4,22 +4,26 @@
   justify-content: center;
   flex-direction: column;
 }
-
-.input-container {
-  background-color: green;
+header {
   width: 100%;
-  padding: 3rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  padding: 0 0 7rem 0;
+  background-color: #3b5394;
   color: white;
+  border: 1px solid black;
 }
 
-.input-file {
-  font-size: 2.2rem;
-  text-align: center;
+header h1 {
+  font-size: 3.5rem;
+  margin: 1.5rem 0;
 }
 
+.options_container {
+  width: 100%;
+}
 .table-container {
   width: 80%;
   background-color: rgb(233, 231, 231);
@@ -27,46 +31,27 @@
   border-radius: 1.5rem;
 }
 
-h1 {
-  font-size: 3rem;
-  text-align: center;
-  padding: 0 3rem;
-}
-
-table {
-  width: 60%;
-  margin: 5rem auto;
-  border-collapse: collapse;
-  border: 0.1rem solid black;
-  font-size: 2rem;
-  background-color: #fff;
-}
-
-table tr {
-  height: 3rem;
-  text-align: center;
-}
-
-table th {
-  border: 0.2rem solid black;
-}
-
-table td {
-  border: 0.1rem solid black;
-}
-
-.tableData-result {
-  font-weight: bold;
-}
-
-.table-operations_container {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-.table-operations_container button {
-  margin: 0 1rem;
+.options_container h1 {
   font-size: 2.5rem;
+  margin: 1rem 0;
+  padding: 0px 25rem;
+}
+
+footer {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+}
+
+footer p {
+  font-size: 2rem;
+  height: max-content;
+  background-color: rgb(233, 231, 231);
+  padding: 5rem 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .options_container h1 {
+    padding: 0px 5rem;
+  }
 }

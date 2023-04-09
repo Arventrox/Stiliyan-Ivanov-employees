@@ -1,0 +1,32 @@
+.input_container {
+  position: relative;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label {
+  height: 5rem;
+  width: 20rem;
+  background-color: #dfe7ef;
+  color: #000;
+  border: 1px solid black;
+  border-radius: 2rem;
+  position: absolute;
+  margin: auto;
+  top: 3rem;
+  left: -10rem;
+  bottom: 0;
+  right: 0;
+  font-size: 2.5rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label:hover {
+  background-color: #fff;
+  cursor: pointer;
+}

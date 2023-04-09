@@ -1,3 +1,5 @@
+import style from "./Table.module.css";
+
 const Table = ({ columns, data, combinedDaysWorked }) => {
   return (
     <table>
@@ -19,7 +21,7 @@ const Table = ({ columns, data, combinedDaysWorked }) => {
 
         {combinedDaysWorked && (
           <tr>
-            <td className="tableData-result" colSpan={columns.length}>
+            <td className={style.tableData_result} colSpan={columns.length}>
               {combinedDaysWorked}
             </td>
           </tr>

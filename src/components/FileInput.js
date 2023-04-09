@@ -1,14 +1,17 @@
+import style from "./FileInput.module.css";
+
 const FileInput = ({ fileHandler }) => {
   return (
-    <div className="input-container">
+    <div className={style.input_container}>
       <input
         type="file"
         aria-label="file-input"
         name="file"
+        id="file"
         accept=".csv"
         onChange={fileHandler}
-        className="input-file"
       />
+      <label htmlFor="file">IMPORT CSV</label>
     </div>
   );
 };

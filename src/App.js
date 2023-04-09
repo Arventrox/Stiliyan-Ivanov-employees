@@ -13,6 +13,7 @@ import {
 
 const App = () => {
   const [tableName, setTableName] = useState(null);
+  const [fileName, setFileName] = useState("");
   const [isTableSorted, setIsTableSorted] = useState(false);
   const [rawData, setRawData] = useState([]);
   const [rawColumns, setRawColumns] = useState([]);
@@ -31,6 +32,7 @@ const App = () => {
     event.preventDefault();
     const file = event.target.files[0];
     if (!file) return;
+    setFileName(file.name);
     setTableName("Imported Table");
     setIsTableSorted(false);
 
@@ -89,27 +91,39 @@ const App = () => {
 
   return (
     <div className="App">
-      <FileInput fileHandler={fileHandler} />
+      <header>
+        <h1>Pair of employees who have worked together</h1>
+        <FileInput fileHandler={fileHandler} />
+      </header>
+      {tableName && (
+        <div className="options_container">
+          <h1>{`${tableName} ${!isTableSorted && fileName}`}</h1>
 
-      <div className="table-container">
-        <h1>{tableName}</h1>
+          {!isTableSorted ? (
+            <Button onClick={sortTableHandler}>Sort Table</Button>
+          ) : (
+            <Button onClick={showOriginalHandler}>Show original</Button>
+          )}
+        </div>
+      )}
 
-        {!isTableSorted ? (
-          <Table columns={rawColumns} data={rawValues} />
-        ) : (
-          <Table
-            columns={tableColumns}
-            data={tableData}
-            combinedDaysWorked={combinedDaysWorked}
-          />
-        )}
-
-        {!isTableSorted && tableName ? (
-          <Button onClick={sortTableHandler}>Sort Table</Button>
-        ) : (
-          <Button onClick={showOriginalHandler}>Show original</Button>
-        )}
-      </div>
+      {tableName ? (
+        <>
+          {!isTableSorted ? (
+            <Table columns={rawColumns} data={rawValues} />
+          ) : (
+            <Table
+              columns={tableColumns}
+              data={tableData}
+              combinedDaysWorked={combinedDaysWorked}
+            />
+          )}
+        </>
+      ) : (
+        <div className="table-container">
+          <h1>Please import a csv file from the button</h1>
+        </div>
+      )}
     </div>
   );
 };
