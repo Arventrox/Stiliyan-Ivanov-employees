@@ -1,10 +1,9 @@
 # Pair of employees who have worked together
 
 This project was made with React.
-This project was tested on node v18.11.0.
+This project was tested with node v18.11.0.
 
 The data folder is not a part of the project, it is there for convenience.
-The utility functions and all elements of the project are in App.js for your convenience.
 
 ## Task
 
