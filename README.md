@@ -24,6 +24,6 @@ together on common projects for the longest period of time.
 ### Usage
 
 1. Run npm start in console
-2. Click **Choose File** to select a csv file, which imports and displays the raw data from the file
+2. Click **Import CSV** to select a csv file, which imports and displays the raw data from the file
 3. Click **Sort Table** to get and display the pair of employees who have worked
    together on common projects for the longest period of time
